@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Management System - Login</title>
+    <link rel="stylesheet" href="add.css">
+    <script>
+        function togglePassword() {
+            var passField = document.getElementById("password");
+
+            if (passField.type === "password") {
+                passField.type = "text";
+            } else {
+                passField.type = "password";
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="login-container">
+    <h1>Library Management System</h1>
+    <h3>Login</h3>
+    <form action="LoginServlet" method="POST">
+        <label>Username</label>
+        <input type="text"
+               name="username"
+               placeholder="Enter Username"
+               pattern="[A-Za-z0-9]+"
+               minlength="3"
+               required>
+        <label>Password</label>
+        <input type="password"
+               name="password"
+               id="password"
+               placeholder="Enter Password"
+               minlength="4"
+               required>
+        <div style="text-align:left; margin-top:8px;">
+            <input type="checkbox" onclick="togglePassword()">
+            Show Password
+        </div>
+        <input type="submit" value="Login">
+    </form>
+</div>
+</body>
+</html>
